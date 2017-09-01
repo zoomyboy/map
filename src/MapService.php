@@ -30,7 +30,7 @@ class MapService implements MapServiceInterface {
 	}
 
 	public function distance($from, $to) {
-		$data = json_decode(file_get_contents('https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins='.$from.'&destinations='.$to));
+		$data = json_decode(file_get_contents('https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins='.rawurlencode($from).'&destinations='.rawurlencode($to)));
 
 		return $data->rows[0]->elements[0]->distance->value;
 	}
