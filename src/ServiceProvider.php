@@ -7,7 +7,7 @@ use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 class ServiceProvider extends BaseServiceProvider {
 	public function register() {
 		app()->singleton(MapServiceInterface::class, function() {
-			return new MapService(config('service.mapkey'));
+			return new MapService(config('map.key'));
 		});
 	}
 

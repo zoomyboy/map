@@ -1,5 +1,5 @@
 <?php
 
 return [
-	'mapkey' => env('MAP_KEY', false)
+	'key' => env('MAP_KEY', false)
 ];
