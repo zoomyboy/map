@@ -47,10 +47,14 @@ trait HasMap {
 		return $a;
 	}
 
-	public static function distanceTo($location, $e, $value) {
-		if ($related == '>') {
-			
-		}
+	public function distanceIsGreaterThan($location, $value) {
+		$d = Map::distance($location, $this->latitude.','.$this->longitude);
+		return $d !== false && $d >= $value;
+	}
+
+	public function distanceIsLowerThan($location, $value) {
+		$d = Map::distance($location, $this->latitude.','.$this->longitude);
+		return $d !== false && $d <= $value;
 	}
 
 	public static function bootHasMap() {
