@@ -1,0 +1,17 @@
+{
+    "name": "zoomyboy/map",
+    "description": "Google Geocoding and DistanceMatrix Services for Laravel 5 Eloquent models",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Philipp Lang",
+            "email": "philipp@aweos.de"
+        }
+    ],
+    "require": {},
+	"autoload": {
+		"psr-4": {
+			"Zoomyboy\\Map\\": "src/"
+		}
+	}
+}
