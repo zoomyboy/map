@@ -62,4 +62,8 @@ trait HasMap {
 			$model->setCoords();
 		});
 	}
+
+	public function newCollection(array $models = []) {
+		return new MapCollection($models);
+	}
 }
