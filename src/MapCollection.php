@@ -14,7 +14,8 @@ class MapCollection extends Collection {
 
 	public function whereDistanceLowerThan($address, $distance) {
 		return $this->filter(function($model) use ($address, $distance) {
-			return Map::distance($address, $model->addressForCoords) < $distance; 
+			$dist = Map::distance($address, $model->addressForCoords);
+			return $dist !== false && $dist < $distance; 
 		});
 	}
 }
