@@ -12,6 +12,24 @@ class MapService implements MapServiceInterface {
 		}
 	}
 
+	public function fromAddressParts($address = null, $zip = null, $city = null) {
+		$a = '';
+
+		if (is_string($this->address)) {
+			$a .= $this->address.', ';
+		}
+
+		if (is_string($this->zip)) {
+			$a .= $this->zip.' ';
+		}
+
+		if (is_string($this->city)) {
+			$a .= $this->city;
+		}
+
+		return $a;
+	}
+
 	public function coords($address, $zip='', $city='') {
 		$location = '';
 
